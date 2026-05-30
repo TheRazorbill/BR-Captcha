@@ -1,16 +1,10 @@
-// ─── Audio ───────────────────────────────────────────────────────────────────
-function playAudio(src, volume = 1) {
-  const a = new Audio(src);
-  a.volume = volume;
-  a.play().catch(() => {});
-}
-
-const SFX = {
-  click:   () => playAudio('assets/click.mp3', 0.75),
-  correct: () => playAudio('assets/correct.mp3', 0.3),
-  wrong:   () => playAudio('assets/wrong.mp3', 0.3),
-  refresh: () => playAudio('assets/refresh.mp3', 0.3),
-};
+import { renderCheckbox } from './levels/checkbox.js';
+import { renderStopSigns } from './levels/stop-signs.js';
+import { renderVegetables } from './levels/vegetables.js';
+import { renderRotating } from './levels/rotating.js';
+import { renderTicTacToe } from './levels/tic-tac-toe.js';
+import { renderWordCaptcha } from './levels/word-captcha.js';
+import { renderArrozFeijao } from './levels/arroz-feijao.js';
 
 // ─── State ───────────────────────────────────────────────────────────────────
 const LEVELS = [
@@ -20,6 +14,7 @@ const LEVELS = [
   { name: 'Rotation',    render: renderRotating },
   { name: 'Tic Tac Toe', render: renderTicTacToe },
   { name: 'Word Captcha',render: renderWordCaptcha },
+  { name: 'Arroz e Feijão', render: renderArrozFeijao },
 ];
 
 let currentLevel = parseInt(localStorage.getItem('not-a-robot-level') || '0');
