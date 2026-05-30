@@ -263,6 +263,7 @@ html, body {
   user-drag: none;
   -webkit-user-drag: none;
   width: 24px;
+  margin-right: 15px;
 }
 
 .captcha-refresh.spinning { animation: rotate .5s ease-out forwards; }
