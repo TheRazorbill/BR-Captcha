@@ -63,14 +63,15 @@ html, body {
 }
 
 #footer-reset {
-  background: #f6f6f6;
-  border-top-right-radius: 10px;
+  background: #1f9845;
+  color: #fff;
   cursor: pointer;
   padding: 10px 15px;
   user-select: none;
+  margin: 20px;
 }
 
-#footer-reset:hover { background: #e8e8e8; }
+#footer-reset:hover { background: #14652d; }
 
 #footer-text {
   background: #f6f6f6;
@@ -144,7 +145,7 @@ html, body {
 
 .cb-spinner {
   animation: spinnerSpin 2.5s linear infinite;
-  border-color: #4d90fe #4d90fe transparent transparent;
+  border-color: #1c74e0 #1c74e0 transparent transparent;
   border-radius: 36px;
   border-style: solid;
   border-width: 6px;
@@ -231,7 +232,7 @@ html, body {
 }
 
 .captcha-title {
-  background: #488ddd;
+  background: #1c74e0;
   color: #fff;
   font-size: 16px;
   padding: 16px;
@@ -269,7 +270,7 @@ html, body {
 @keyframes rotate { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
 .verify-btn {
-  background: #488ddd;
+  background: #1c74e0;
   border: none;
   color: #fff;
   cursor: pointer;
@@ -280,7 +281,7 @@ html, body {
   transition: background-color .15s ease-in-out;
 }
 
-.verify-btn:hover { background: #62a5f1; }
+.verify-btn:hover { background: #1559ad; }
 .verify-btn:active { transform: scale(.98); }
 
 .verify-btn.wrong {
@@ -317,8 +318,8 @@ html, body {
 .grid-item.selected { outline-offset: -4px; scale: .75; }
 
 .grid-item.selected::after {
-  background-color: #488ddd;
-  background-image: url(assets/checkmark-white.svg);
+  background-color: #1c74e0;
+  background-image: url("assets/checkmark-white.svg");
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: 20px;
@@ -466,12 +467,12 @@ html, body {
   width: 100%;
 }
 
-.wc-input:focus { border-color: #4285f4; box-shadow: 0 0 0 2px rgba(66,133,244,.2); }
+.wc-input:focus { border-color: #1c74e0; box-shadow: 0 0 0 2px rgba(66,133,244,.2); }
 .wc-input.wrong { border-color: #ea4335; box-shadow: 0 0 0 2px rgba(234,67,53,.2); }
 
 .wc-submit {
-  background: #4285f4;
-  border: 1px solid #4285f4;
+  background: #1c74e0;
+  border: 1px solid #1c74e0;
   border-radius: 3px;
   color: #fff;
   cursor: pointer;
@@ -481,7 +482,7 @@ html, body {
   width: 100px;
 }
 
-.wc-submit:hover { background: #3367d6; }
+.wc-submit:hover { background: #1559ad; }
 
 .wc-submit.wrong {
   animation: wrongShake .25s ease-in-out 3;
@@ -543,7 +544,7 @@ html, body {
   padding: 8px 30px;
 }
 
-.modal-btn:hover { background: #62a5f1; border-color: #62a5f1; color: #fff; }
+.modal-btn:hover { background: #1c74e0; border-color: #000; color: #fff; }
 .modal-btn.cancel:hover { background: #eee; border-color: #000; color: #000; }
 
 /* ─── Responsive ─── */
