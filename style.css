@@ -269,6 +269,13 @@ html, body {
 
 @keyframes rotate { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
+#timer {
+  margin-left: 15px;
+  font-size: 24px;
+  color: red;
+  font-weight: bold;
+}
+
 .verify-btn {
   background: #1c74e0;
   border: none;
