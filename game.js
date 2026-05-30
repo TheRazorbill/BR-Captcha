@@ -5,6 +5,8 @@ import { renderRotating } from './levels/rotating.js';
 import { renderTicTacToe } from './levels/tic-tac-toe.js';
 import { renderWordCaptcha } from './levels/word-captcha.js';
 import { renderArrozFeijao } from './levels/arroz-feijao.js';
+import { renderMeiaTenis } from './levels/meia-tenis.js';
+import { renderSorvete } from './levels/sorvete.js';
 
 // ─── State ───────────────────────────────────────────────────────────────────
 const LEVELS = [
@@ -15,6 +17,8 @@ const LEVELS = [
   { name: 'Tic Tac Toe', render: renderTicTacToe },
   { name: 'Word Captcha',render: renderWordCaptcha },
   { name: 'Arroz e Feijão', render: renderArrozFeijao },
+  { name: 'Meia / Tênis', render: renderMeiaTenis },
+  { name: 'Pote de Sorvete', render: renderSorvete },
 ];
 
 let currentLevel = parseInt(localStorage.getItem('not-a-robot-level') || '0');
