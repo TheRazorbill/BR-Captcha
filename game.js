@@ -7,6 +7,7 @@ import { renderWordCaptcha } from './levels/word-captcha.js';
 import { renderArrozFeijao } from './levels/arroz-feijao.js';
 import { renderMeiaTenis } from './levels/meia-tenis.js';
 import { renderSorvete } from './levels/sorvete.js';
+import { renderCampainha } from './levels/campainha.js';
 
 // ─── State ───────────────────────────────────────────────────────────────────
 const LEVELS = [
@@ -19,6 +20,7 @@ const LEVELS = [
   { name: 'Arroz e Feijão', render: renderArrozFeijao },
   { name: 'Meia / Tênis', render: renderMeiaTenis },
   { name: 'Pote de Sorvete', render: renderSorvete },
+  { name: 'Campainha', render: renderCampainha },
 ];
 
 let currentLevel = parseInt(localStorage.getItem('not-a-robot-level') || '0');
@@ -40,7 +42,10 @@ function goToLevel(n) {
   $levelLabel.textContent = `Level ${currentLevel + 1}: ${LEVELS[currentLevel].name}`;
   $content.innerHTML = '';
   cleanup = LEVELS[currentLevel].render($content, () => {
-    setTimeout(() => goToLevel(currentLevel + 1), 800);
+    const nextLevelIndex = currentLevel + 1;
+    if (nextLevelIndex < LEVELS.length) {
+      setTimeout(() => goToLevel(nextLevelIndex), 800);
+    }
   });
 }
 
