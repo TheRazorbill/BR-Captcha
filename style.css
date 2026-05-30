@@ -370,6 +370,8 @@ html, body {
   align-items: center;
   aspect-ratio: 1;
   background: #f3f3f3;
+  border-right: 3px solid #aaa;
+  border-bottom: 3px solid #aaa;
   cursor: pointer;
   display: flex;
   font-size: 48px;
@@ -377,6 +379,9 @@ html, body {
   transition: scale .09s ease-out;
   width: 100%;
 }
+
+.ttt-cell:nth-child(3n)   { border-right: none; }
+.ttt-cell:nth-child(n+7)  { border-bottom: none; }
 
 .ttt-cell svg { height: 60%; width: 60%; overflow: visible; }
 
