@@ -63,6 +63,19 @@ export function makeGrid(size, image, parent) {
   };
 }
 
+// ─── Cronometro  ─────────────────────────────────────────────────────────────
+let time = 20;
+
+setInterval(() => {
+  const timerElement = document.getElementById("timer");
+
+  if (!timerElement) return;
+
+  timerElement.textContent = `00:${time}`;
+
+  time--;
+}, 1000);
+
 export function makeGridCaptcha(title, instruction, parent) {
   const container = el('div', 'captcha-container');
 
@@ -75,9 +88,15 @@ export function makeGridCaptcha(title, instruction, parent) {
 
   const controls = el('div', 'captcha-controls');
   const refreshImg = el('img', 'captcha-refresh', { src: 'assets/refresh.svg', alt: '' });
+  const timer = el('span', 'captcha-timer');
+  timer.id = 'timer';
+  timer.textContent = '00:20';
+  time = 20;
+  
   const verifyBtn = el('button', 'verify-btn');
   verifyBtn.textContent = 'Verify';
   controls.appendChild(refreshImg);
+  controls.appendChild(timer);
   controls.appendChild(verifyBtn);
   container.appendChild(controls);
   parent.appendChild(container);

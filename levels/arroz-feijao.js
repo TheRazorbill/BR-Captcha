@@ -1,7 +1,7 @@
 import { SFX, el, makeGridCaptcha, shakeWrong } from '../shared.js';
 
 export function renderArrozFeijao(parent, onComplete) {
-  const { content, refreshImg, verifyBtn } = makeGridCaptcha('Arroz e Feijão', 'Selecione o lado correto e depois clique em', parent);
+  const { content, refreshImg, verifyBtn } = makeGridCaptcha('Feijão é?', 'Selecione o lado correto e depois clique em', parent);
   refreshImg.style.display = 'none';
 
   const instruction = el('div', 'arroz-feijao-instruction');
@@ -17,9 +17,9 @@ export function renderArrozFeijao(parent, onComplete) {
 
   const controls = el('div', 'arroz-feijao-controls');
   const leftBtn = el('button', 'arroz-feijao-choice');
-  leftBtn.textContent = 'Esquerda';
+  leftBtn.textContent = 'Por cima';
   const rightBtn = el('button', 'arroz-feijao-choice');
-  rightBtn.textContent = 'Direita';
+  rightBtn.textContent = 'Por baixo';
   controls.appendChild(leftBtn);
   controls.appendChild(rightBtn);
   content.appendChild(controls);
