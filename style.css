@@ -297,6 +297,84 @@ html, body {
   75% { transform: rotate(-6deg); }
 }
 
+/* ─── Arroz e Feijão Level 7 ─── */
+.arroz-feijao-container {
+  max-width: 560px;
+  padding: 6px;
+}
+
+.arroz-feijao-header {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.arroz-feijao-title {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.arroz-feijao-content {
+  background: #f2f2f2;
+  margin-top: 2px;
+  padding: 14px;
+}
+
+.arroz-feijao-instruction {
+  color: #222;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.arroz-feijao-card {
+  align-items: center;
+  background: #fff;
+  border: 1px solid #d3d3d3;
+  display: flex;
+  justify-content: center;
+  min-height: 180px;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.arroz-feijao-image {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  width: 100%;
+}
+
+.arroz-feijao-controls {
+  align-items: center;
+  border-top: 1px solid #d3d3d3;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 5px;
+  padding: 10px 8px 6px;
+}
+
+.arroz-feijao-choice {
+  background: #1c74e0;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  min-width: 130px;
+  padding: 10px 18px;
+  transition: background-color .15s ease-in-out, transform .08s ease-in-out;
+}
+
+.arroz-feijao-choice:hover { background: #1559ad; }
+.arroz-feijao-choice:active { transform: scale(.98); }
+
+.arroz-feijao-choice.selected {
+  background: #0f4ea0;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, .35);
+}
+
 /* ─── Grid ─── */
 .grid-inner {
   display: grid;
