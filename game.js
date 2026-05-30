@@ -157,7 +157,7 @@ function renderCheckbox(parent, onComplete) {
   cbWrap.appendChild(checkmark);
 
   const text = el('div', 'cb-text');
-  text.textContent = "I'm not a robot";
+  text.textContent = "Eu sou brasileiro!";
 
   const logoArea = el('div', 'cb-logo-area');
   logoArea.innerHTML = `<img src="assets/recaptcha.png" alt="reCAPTCHA"><div class="cb-logo-text">reCAPTCHA</div>`;
@@ -200,7 +200,7 @@ function renderStopSigns(parent, onComplete) {
   ];
   let idx = 0;
 
-  const { content, refreshImg, verifyBtn } = makeGridCaptcha('Stop Sign', 'Select all the squares with a', parent);
+  const { content, refreshImg, verifyBtn } = makeGridCaptcha('Sinal de PARE (STOP)', 'Selecione todos os quadrados com o', parent);
   let grid = makeGrid(4, `assets/stop-signs/${idx + 1}.webp`, content);
 
   refreshImg.addEventListener('click', () => {
@@ -231,7 +231,7 @@ function renderVegetables(parent, onComplete) {
   const CORRECT = ['carrot','onion','corn','potato'];
   const OPTIONAL = ['eggplant'];
 
-  const { content, refreshImg, verifyBtn } = makeGridCaptcha('Vegetable', 'Select all the squares with a', parent);
+  const { content, refreshImg, verifyBtn } = makeGridCaptcha('Vegetais', 'Selecione todos os quadrados com os', parent);
 
   const gridWrap = el('div', 'grid-inner');
   gridWrap.style.gridTemplateColumns = 'repeat(3, 1fr)';
@@ -280,7 +280,7 @@ function renderVegetables(parent, onComplete) {
 function renderRotating(parent, onComplete) {
   const rotations = Array.from({ length: 9 }, () => 90 * Math.floor(4 * Math.random()));
 
-  const { content, refreshImg, verifyBtn } = makeGridCaptcha('Intersection', 'Reassemble the', parent);
+  const { content, refreshImg, verifyBtn } = makeGridCaptcha('Interseção', 'Remontar a', parent);
 
   const rotateCont = el('div', 'rotating-container');
 
@@ -345,7 +345,7 @@ function renderTicTacToe(parent, onComplete) {
   };
   function playS(k) { try { sounds[k].cloneNode().play(); } catch(e) {} }
 
-  const { content, refreshImg, verifyBtn } = makeGridCaptcha('Tic Tac Toe', 'Win at', parent);
+  const { content, refreshImg, verifyBtn } = makeGridCaptcha('Jogo da velha', 'Me vença no', parent);
 
   const tttCont = el('div', 'ttt-container');
   const gridWrap = el('div', 'grid-inner');
@@ -514,7 +514,7 @@ function renderWordCaptcha(parent, onComplete) {
   const wrap = el('div', 'word-captcha-wrap');
 
   const instr = el('div', 'wc-instruction');
-  instr.textContent = 'Enter the text below';
+  instr.textContent = 'Prencha o texto abaixo';
   wrap.appendChild(instr);
 
   const canvasWrap = el('div', 'wc-canvas-wrap');
@@ -534,9 +534,9 @@ function renderWordCaptcha(parent, onComplete) {
   wrap.appendChild(canvasWrap);
 
   const inputRow = el('div', 'wc-input-row');
-  const input = el('input', 'wc-input', { type: 'text', placeholder: 'Answer', autofocus: '' });
+  const input = el('input', 'wc-input', { type: 'text', placeholder: 'Resposta', autofocus: '' });
   const submitBtn = el('button', 'wc-submit');
-  submitBtn.textContent = 'Submit';
+  submitBtn.textContent = 'Enviar';
   inputRow.appendChild(input);
   inputRow.appendChild(submitBtn);
   wrap.appendChild(inputRow);
