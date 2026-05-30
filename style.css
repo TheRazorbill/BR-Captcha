@@ -269,12 +269,26 @@ html, body {
 
 @keyframes rotate { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
-#timer {
-  margin-left: 15px;
+.captcha-timer {
   font-size: 24px;
   color: red;
   font-weight: bold;
 }
+
+.captcha-timer.negative {
+  color: red;
+  animation: panic 0.3s infinite alternate;
+}
+
+@keyframes panic {
+  from {
+    transform: rotate(-2deg);
+  }
+  to {
+    transform: rotate(2deg);
+  }
+}
+
 
 .verify-btn {
   background: #1c74e0;

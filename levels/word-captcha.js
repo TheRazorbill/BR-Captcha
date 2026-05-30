@@ -1,5 +1,21 @@
 import { SFX, el } from '../shared.js';
 
+function startTimer(timerElement) {
+  let time = 20;
+
+  timerElement.textContent = '00:20';
+
+  setInterval(() => {
+    time--;
+
+    if (time >= 0) {
+      timerElement.textContent = `00:${String(time).padStart(2, '0')}`;
+    } else {
+      timerElement.textContent = `-00:${String(Math.abs(time)).padStart(2, '0')}`;
+    }
+  }, 1000);
+}
+
 export function renderWordCaptcha(parent, onComplete) {
   const CAPTCHAS = ['WVUGYQ', 'YHRPCD', 'FNZZSD'];
   let idx = Math.floor(Math.random() * 3);
@@ -7,10 +23,16 @@ export function renderWordCaptcha(parent, onComplete) {
   let startTime = null;
   let gl, program, uTimeLocation;
 
+  const timer = el('span', 'captcha-timer');
+  timer.textContent = '00:20';
+
+  startTimer(timer);
+
   const wrap = el('div', 'word-captcha-wrap');
 
   const instr = el('div', 'wc-instruction');
   instr.textContent = 'Prencha o texto abaixo';
+  wrap.appendChild(timer);
   wrap.appendChild(instr);
 
   const canvasWrap = el('div', 'wc-canvas-wrap');

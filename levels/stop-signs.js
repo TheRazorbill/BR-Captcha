@@ -9,8 +9,8 @@ export function renderStopSigns(parent, onComplete) {
   ];
   let idx = 0;
 
-  const { content, refreshImg, verifyBtn } = makeGridCaptcha('Sinal de PARE (STOP)', 'Selecione todos os quadrados com o', parent);
-  let grid = makeGrid(4, `assets/stop-signs/${idx + 1}.webp`, content);
+  const { content, refreshImg, verifyBtn } = makeGridCaptcha('Sinal de PARE', 'Selecione todos os quadrados com o', parent);
+  let grid = makeGrid(4, `assets/stop-signs/pare.jpg`, content);
 
   refreshImg.addEventListener('click', () => {
     SFX.refresh();
@@ -18,7 +18,7 @@ export function renderStopSigns(parent, onComplete) {
     setTimeout(() => refreshImg.classList.remove('spinning'), 500);
     idx = (idx + 1) % 4;
     content.innerHTML = '';
-    grid = makeGrid(4, `assets/stop-signs/${idx + 1}.webp`, content);
+    grid = makeGrid(4, `assets/stop-signs/pare.jpg`, content);
   });
 
   verifyBtn.addEventListener('click', () => {

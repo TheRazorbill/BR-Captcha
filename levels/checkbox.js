@@ -30,7 +30,7 @@ export function renderCheckbox(parent, onComplete) {
   cbWrap.appendChild(checkmark);
 
   const text = el('div', 'cb-text');
-  text.textContent = 'Eu sou brasileiro!';
+  text.textContent = 'Não sou um robô';
 
   const logoArea = el('div', 'cb-logo-area');
   logoArea.innerHTML = `<img src="assets/recaptcha.png" alt="reCAPTCHA"><div class="cb-logo-text">reCAPTCHA</div>`;
