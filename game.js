@@ -10,6 +10,7 @@ import { renderMeiaTenis } from './levels/meia-tenis.js';
 import { renderSorvete } from './levels/sorvete.js';
 import { renderCampainha } from './levels/campainha.js';
 import { renderCpfNaNota } from './levels/cpf-na-nota/index.js';
+import { renderFaceExpression } from './levels/face-expression.js';
 
 // ─── State ───────────────────────────────────────────────────────────────────
 const LEVELS = [
@@ -25,6 +26,7 @@ const LEVELS = [
   { name: 'Pote de Sorvete', render: renderSorvete },
   { name: 'Campainha', render: renderCampainha },
   { name: 'CPF na Nota', render: renderCpfNaNota },  
+  { name: 'Face Expression', render: renderFaceExpression },
 ];
 
 let currentLevel = parseInt(localStorage.getItem('not-a-robot-level') || '0');

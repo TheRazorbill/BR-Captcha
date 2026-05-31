@@ -480,6 +480,65 @@ html, body {
 }
 .campainha-choice.selected { background: #0f4ea0; box-shadow: inset 0 0 0 2px rgba(255,255,255,0.28); }
 
+/* Face Expression level */
+.face-expression {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 520px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.face-expression-preview {
+  background: #111;
+  border: 1px solid #d3d3d3;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 4 / 3;
+}
+
+.face-expression-video {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.face-expression-overlay {
+  background: rgba(0, 0, 0, 0.55);
+  bottom: 12px;
+  color: #fff;
+  font-size: 14px;
+  left: 12px;
+  padding: 8px 10px;
+  position: absolute;
+  border-radius: 999px;
+}
+
+.face-expression-status {
+  color: #222;
+  font-size: 15px;
+}
+
+.face-expression-start {
+  background: #1c74e0;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 10px 14px;
+  width: fit-content;
+}
+
+.face-expression-start:hover { background: #1559ad; }
+
+.verify-btn:disabled {
+  opacity: .55;
+  cursor: not-allowed;
+}
+
 /* ─── Grid ─── */
 .grid-inner {
   display: grid;
