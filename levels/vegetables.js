@@ -6,6 +6,7 @@ export function renderVegetables(parent, onComplete) {
   const OPTIONAL = ['eggplant'];
 
   const { content, refreshImg, verifyBtn } = makeGridCaptcha('Vegetais', 'Selecione todos os quadrados com os', parent);
+  refreshImg.style.display = 'none';
 
   const gridWrap = el('div', 'grid-inner');
   gridWrap.style.gridTemplateColumns = 'repeat(3, 1fr)';
