@@ -93,14 +93,24 @@ export function makeGridCaptcha(title, instruction, parent) {
 
   const controls = el('div', 'captcha-controls');
   const refreshImg = el('img', 'captcha-refresh', { src: 'assets/refresh.svg', alt: '' });
+
+  const timerWrap = el('span', 'captcha-timer-wrap');
+
   const timer = el('span', 'captcha-timer');
   timer.textContent = '00:20';
+
+  const timerTooltip = el('span', 'captcha-timer-tooltip');
+  timerTooltip.textContent = 'Tempo restante para nada acontecer.';
+
+  timerWrap.appendChild(timer);
+  timerWrap.appendChild(timerTooltip);
+
   startTimer(timer);
   
   const verifyBtn = el('button', 'verify-btn');
   verifyBtn.textContent = 'Verificar';
   controls.appendChild(refreshImg);
-  controls.appendChild(timer);
+  controls.appendChild(timerWrap);
   controls.appendChild(verifyBtn);
   container.appendChild(controls);
   parent.appendChild(container);

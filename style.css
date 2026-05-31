@@ -288,3 +288,43 @@ html, body {
   #content { padding-top: 120px; }
   #header { height: 100px; flex-direction: column; }
 }
+
+/* ─── Timer easter egg ─── */
+.captcha-timer-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.captcha-timer-tooltip {
+  position: absolute;
+  bottom: 130%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 220px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: #222;
+  color: white;
+  font-size: 12px;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 9999;
+}
+
+.captcha-timer-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: #222 transparent transparent transparent;
+}
+
+.captcha-timer-wrap:hover .captcha-timer-tooltip {
+  opacity: 1;
+}
