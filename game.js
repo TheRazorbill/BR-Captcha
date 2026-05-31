@@ -15,20 +15,20 @@ import { renderConserteChinelo } from './levels/conserte-chinelo/index.js';
 
 // ─── State ───────────────────────────────────────────────────────────────────
 const LEVELS = [
-  { name: 'Checkbox',    render: renderCheckbox },
+  { name: 'Confirme',    render: renderCheckbox },
   { name: 'Pote de Sorvete', render: renderSorvete },
   { name: 'Conserte o Chinelo', render: renderConserteChinelo },
-  { name: 'Stop Sign',   render: renderStopSigns },
-  { name: 'Vegetable',   render: renderVegetables },
-  { name: 'Rotation',    render: renderRotating },
-  { name: 'Tic Tac Toe', render: renderTicTacToe },
-  { name: 'Word Captcha',render: renderWordCaptcha },
+  { name: 'PARE',   render: renderStopSigns },
+  { name: 'Vegetais',   render: renderVegetables },
+  { name: 'Interseção',    render: renderRotating },
+  { name: 'Jogo da Velha', render: renderTicTacToe },
+  { name: 'Captcha de palavra',render: renderWordCaptcha },
   { name: 'Arroz e Feijão', render: renderArrozFeijao },
   { name: 'Complete a Música', render: renderCompleteLyrics },
   { name: 'Campainha', render: renderCampainha },
-  { name: 'Meia / Tênis', render: renderMeiaTenis },
-  { name: 'CPF na Nota', render: renderCpfNaNota },  
-  { name: 'Face Expression', render: renderFaceExpression },
+  { name: 'Qual a ordem?', render: renderMeiaTenis },
+  { name: 'CPF na Notaaaaa', render: renderCpfNaNota },  
+  { name: 'Sorria :)', render: renderFaceExpression },
 ];
 
 let currentLevel = parseInt(localStorage.getItem('not-a-robot-level') || '0');
@@ -47,7 +47,7 @@ function goToLevel(n) {
   if (cleanup) { cleanup(); cleanup = null; }
   currentLevel = Math.max(0, Math.min(n, LEVELS.length - 1));
   localStorage.setItem('not-a-robot-level', currentLevel);
-  $levelLabel.textContent = `Level ${currentLevel + 1}: ${LEVELS[currentLevel].name}`;
+  $levelLabel.textContent = `Nível ${currentLevel + 1}: ${LEVELS[currentLevel].name}`;
   $content.innerHTML = '';
   cleanup = LEVELS[currentLevel].render($content, () => {
     const nextLevelIndex = currentLevel + 1;

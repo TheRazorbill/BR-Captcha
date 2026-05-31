@@ -30,7 +30,7 @@ async function loadModels(faceapi) {
 }
 
 export function renderFaceExpression(parent, onComplete) {
-  const { content, refreshImg, verifyBtn } = makeGridCaptcha('Face Expression', 'Abra a câmera, sorria e clique em', parent);
+  const { content, refreshImg, verifyBtn } = makeGridCaptcha('Sorria :)', 'Abra a câmera e', parent);
   refreshImg.style.display = 'none';
 
   const wrap = el('div', 'face-expression');
@@ -104,7 +104,7 @@ export function renderFaceExpression(parent, onComplete) {
 
           if (smiling) {
             overlay.textContent = 'Sorriso detectado';
-            status.textContent = 'Sorria detectado. Clique em Verify para continuar.';
+            status.textContent = 'Sorria detectado. Clique em Verificar para continuar.';
           } else {
             overlay.textContent = 'Quase lá';
             status.textContent = 'Preciso ver um sorriso maior.';

@@ -3,7 +3,7 @@ import { SFX, el, makeGridCaptcha, shakeWrong } from '../../shared.js';
 export function renderSorvete(parent, onComplete) {
   const { content, refreshImg, verifyBtn } = makeGridCaptcha(
     'O que tem nesse pote de sorvete congelado?',
-    'Digite a resposta e clique em enviar',
+    'Digite a resposta',
     parent
   );
 
@@ -30,7 +30,7 @@ export function renderSorvete(parent, onComplete) {
   });
 
   const submitBtn = el('button', 'sorvete-submit');
-  submitBtn.textContent = 'Enviar';
+  submitBtn.textContent = 'Verificar';
 
   inputRow.appendChild(input);
   inputRow.appendChild(submitBtn);

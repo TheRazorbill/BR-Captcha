@@ -54,7 +54,7 @@ export function renderCpfNaNota(parent, onComplete) {
   micBtn.textContent = 'Gritar';
 
   const verifyBtn = el('button', 'wc-submit');
-  verifyBtn.textContent = 'Verify';
+  verifyBtn.textContent = 'Verificar';
   verifyBtn.disabled = true;
 
   controls.appendChild(micBtn);

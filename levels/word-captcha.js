@@ -54,7 +54,7 @@ export function renderWordCaptcha(parent, onComplete) {
   const inputRow = el('div', 'wc-input-row');
   const input = el('input', 'wc-input', { type: 'text', placeholder: 'Resposta', autofocus: '' });
   const submitBtn = el('button', 'wc-submit');
-  submitBtn.textContent = 'Enviar';
+  submitBtn.textContent = 'Verificar';
   inputRow.appendChild(input);
   inputRow.appendChild(submitBtn);
   wrap.appendChild(inputRow);

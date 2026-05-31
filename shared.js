@@ -98,7 +98,7 @@ export function makeGridCaptcha(title, instruction, parent) {
   startTimer(timer);
   
   const verifyBtn = el('button', 'verify-btn');
-  verifyBtn.textContent = 'Verify';
+  verifyBtn.textContent = 'Verificar';
   controls.appendChild(refreshImg);
   controls.appendChild(timer);
   controls.appendChild(verifyBtn);

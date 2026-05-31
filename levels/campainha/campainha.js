@@ -259,7 +259,7 @@ export function renderCampainha(parent, onComplete) {
         running = false;
 
         overlay.textContent = 'Ninguém encontrado';
-        status.textContent = `✅ ${getRandomMessage(successMessages)} Clique em Verify para continuar.`;
+        status.textContent = `✅ ${getRandomMessage(successMessages)} Clique em Verificar para continuar.`;
 
         verifyBtn.disabled = false;
         campainhaBtn.disabled = true;
