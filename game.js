@@ -7,7 +7,7 @@ import { renderWordCaptcha } from './levels/word-captcha.js';
 import { renderArrozFeijao } from './levels/arroz-feijao.js';
 import { renderCompleteLyrics } from './levels/complete-song/index.js';
 import { renderMeiaTenis } from './levels/meia-tenis.js';
-import { renderSorvete } from './levels/sorvete.js';
+import { renderSorvete } from './levels/sorvete/index.js';
 import { renderCampainha } from './levels/campainha/campainha.js';
 import { renderCpfNaNota } from './levels/cpf-na-nota/index.js';
 import { renderFaceExpression } from './levels/face-expression.js';

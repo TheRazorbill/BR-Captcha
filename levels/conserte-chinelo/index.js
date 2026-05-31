@@ -3,13 +3,14 @@ import { SFX, el, makeGridCaptcha, shakeWrong } from '../../shared.js';
 export function renderConserteChinelo(parent, onComplete) {
   const { content, refreshImg, verifyBtn } = makeGridCaptcha(
     'Como você concertaria esse chinelo?',
-    'Arraste o item',
+    'Arraste apenas um item!',
     parent
   );
 
   const BROKEN_IMG = 'assets/conserte-chinelo/chinelo-arrebentado.png';
   const FIXED_IMG = 'assets/conserte-chinelo/chinelo-com-prego.png';
-
+  refreshImg.style.display = 'none';
+  
   const items = [
     {
       id: 'prego',

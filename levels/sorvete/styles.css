@@ -1,0 +1,40 @@
+.sorvete-input-row {
+  display: grid;
+  gap: 7px;
+  grid-template-columns: 1fr auto;
+  margin-top: 2px;
+}
+
+.sorvete-input {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 17px;
+  height: 42px;
+  outline: none;
+  padding: 0 10px;
+  width: 100%;
+}
+
+.sorvete-input:focus { border-color: #1c74e0; box-shadow: 0 0 0 2px rgba(66,133,244,.2); }
+.sorvete-input.wrong { border-color: #ea4335; box-shadow: 0 0 0 2px rgba(234,67,53,.2); }
+
+.sorvete-submit {
+  background: #1c74e0;
+  border: 1px solid #1c74e0;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  height: 42px;
+  width: 100px;
+}
+
+.sorvete-submit:hover { background: #1559ad; }
+
+.sorvete-submit.wrong {
+  animation: wrongShake .25s ease-in-out 3;
+  pointer-events: none;
+}
