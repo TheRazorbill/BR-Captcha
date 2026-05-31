@@ -20,7 +20,7 @@ export function renderRotating(parent, onComplete) {
     div.style.transform = `rotate(${rot}deg)`;
     div.addEventListener('click', () => {
       SFX.click();
-      rotations[i] = (rotations[i] + 90) % 360;
+      rotations[i] = rotations[i] + 90;
       div.style.transform = `rotate(${rotations[i]}deg)`;
     });
     rotateCont.appendChild(div);

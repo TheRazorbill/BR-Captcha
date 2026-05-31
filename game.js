@@ -26,7 +26,6 @@ const LEVELS = [
   { name: 'Captcha de palavra',    render: renderWordCaptcha },
   { name: 'Arroz e Feijão',        render: renderArrozFeijao },
   { name: 'Complete a Música',     render: renderCompleteLyrics },
-  { name: 'Campainha',             render: renderCampainha },
   { name: 'Qual a ordem?',         render: renderMeiaTenis },
   { name: 'CPF na Notaaaaa',       render: renderCpfNaNota },
   { name: 'Sorria :)',             render: renderFaceExpression },

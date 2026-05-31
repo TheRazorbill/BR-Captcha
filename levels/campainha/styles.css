@@ -7,8 +7,8 @@
 }
 .campainha-preview {
   position: relative;
-  width: 360px;
-  height: 270px;
+  width: 300px;
+  height: 200px;
   max-width: 100%;
   border-radius: 14px;
   overflow: hidden;
@@ -58,7 +58,8 @@
 }
 
 .campainha-img {
-  height: 600px;
+  height: 130px;
+  max-width: 100%;
   display: block;
   transition: transform 0.15s ease;
 }
@@ -72,7 +73,6 @@
 }
 
 .campainha-timer {
-  height: 64px;
   font-size: 56px;
   line-height: 64px;
   font-weight: 900;
