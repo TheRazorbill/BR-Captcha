@@ -11,10 +11,12 @@ import { renderSorvete } from './levels/sorvete.js';
 import { renderCampainha } from './levels/campainha.js';
 import { renderCpfNaNota } from './levels/cpf-na-nota/index.js';
 import { renderFaceExpression } from './levels/face-expression.js';
+import { renderConserteChinelo } from './levels/conserte-chinelo/index.js';
 
 // ─── State ───────────────────────────────────────────────────────────────────
 const LEVELS = [
   { name: 'Checkbox',    render: renderCheckbox },
+  { name: 'Conserte o Chinelo', render: renderConserteChinelo },
   { name: 'Stop Sign',   render: renderStopSigns },
   { name: 'Vegetable',   render: renderVegetables },
   { name: 'Rotation',    render: renderRotating },
