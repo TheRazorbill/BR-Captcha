@@ -155,11 +155,12 @@ export function renderConserteChinelo(parent, onComplete) {
   }
 
   function wrongItem(itemElement, label) {
+
     SFX.wrong();
-
     status.textContent = `${label} não resolve. Isso aqui exige gambiarra raiz.`;
-
     itemElement.classList.add('wrong');
+
+    shakeWrong(verifyBtn);
 
     setTimeout(() => {
       itemElement.classList.remove('wrong');
