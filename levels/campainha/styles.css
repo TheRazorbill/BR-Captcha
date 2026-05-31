@@ -5,20 +5,24 @@
   gap: 5px;
   text-align: center;
 }
-
 .campainha-preview {
   position: relative;
-  width: 320px;
+  width: 360px;
+  height: 270px;
   max-width: 100%;
   border-radius: 14px;
   overflow: hidden;
   border: 3px solid #222;
   background: #111;
+  margin: 0 auto;
 }
 
-.campainha-video {
+.campainha-video,
+.campainha-snapshot {
   width: 100%;
+  height: 100%;
   display: block;
+  object-fit: cover;
   transform: scaleX(-1);
 }
 
@@ -27,11 +31,12 @@
   left: 0;
   right: 0;
   bottom: 0;
-  padding: 8px;
+  padding: 10px;
   background: rgba(0, 0, 0, 0.7);
   color: white;
   font-weight: bold;
-  font-size: 14px;
+  text-align: center;
+  z-index: 2;
 }
 
 .campainha-area {

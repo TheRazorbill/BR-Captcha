@@ -16,6 +16,7 @@ import { renderConserteChinelo } from './levels/conserte-chinelo/index.js';
 // ─── State ───────────────────────────────────────────────────────────────────
 const LEVELS = [
   { name: 'Confirme',    render: renderCheckbox },
+  { name: 'Campainha', render: renderCampainha },
   { name: 'Pote de Sorvete', render: renderSorvete },
   { name: 'Conserte o Chinelo', render: renderConserteChinelo },
   { name: 'PARE',   render: renderStopSigns },
