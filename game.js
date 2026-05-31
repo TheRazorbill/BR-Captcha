@@ -15,7 +15,7 @@ import { renderFaceExpression } from './levels/face-expression/index.js';
 import { renderCertificado } from './levels/certificado/index.js';
 
 // ─── State ───────────────────────────────────────────────────────────────────
-const LEVELS = [
+const PLAYABLE_LEVELS = [
   { name: 'Confirme',              render: renderCheckbox },
   { name: 'Campainha',             render: renderCampainha },
   { name: 'Pote de Sorvete',       render: renderSorvete },
@@ -30,8 +30,32 @@ const LEVELS = [
   { name: 'Qual a ordem?',         render: renderMeiaTenis },
   { name: 'CPF na Notaaaaa',       render: renderCpfNaNota },
   { name: 'Sorria :)',             render: renderFaceExpression },
-  { name: 'Certificado de Humanidade', render: renderCertificado },
 ];
+
+const CERTIFICATE_LEVEL = { name: 'Certificado de Humanidade', render: renderCertificado };
+
+let LEVELS = [];
+
+function initializeLevels() {
+  let levelOrder = null;
+  try {
+    levelOrder = JSON.parse(localStorage.getItem('not-a-robot-order'));
+  } catch (e) {}
+
+  if (!levelOrder || levelOrder.length !== PLAYABLE_LEVELS.length) {
+    levelOrder = Array.from({ length: PLAYABLE_LEVELS.length }, (_, i) => i);
+    for (let i = levelOrder.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [levelOrder[i], levelOrder[j]] = [levelOrder[j], levelOrder[i]];
+    }
+    localStorage.setItem('not-a-robot-order', JSON.stringify(levelOrder));
+  }
+
+  LEVELS = levelOrder.map(index => PLAYABLE_LEVELS[index]);
+  LEVELS.push(CERTIFICATE_LEVEL);
+}
+
+initializeLevels();
 
 let currentLevel = parseInt(localStorage.getItem('not-a-robot-level') || '0');
 let cleanup = null;
@@ -68,6 +92,8 @@ $resetBtn.addEventListener('click', () => $modalOverlay.classList.add('visible')
 $modalBtnCancel.addEventListener('click', () => $modalOverlay.classList.remove('visible'));
 $modalBtnReset.addEventListener('click', () => {
   $modalOverlay.classList.remove('visible');
+  localStorage.removeItem('not-a-robot-order');
+  initializeLevels();
   goToLevel(0);
 });
 
