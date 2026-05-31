@@ -110,5 +110,9 @@ export function makeGridCaptcha(title, instruction, parent) {
 
 export function shakeWrong(btn) {
   btn.classList.add('wrong');
-  setTimeout(() => btn.classList.remove('wrong'), 800);
+  setTimeout(() => {
+    btn.classList.remove('wrong');
+    localStorage.setItem('not-a-robot-level', '0');
+    window.location.reload();
+  }, 800);
 }

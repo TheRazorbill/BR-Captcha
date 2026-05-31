@@ -177,6 +177,8 @@ export function renderTicTacToe(parent, onComplete) {
     if (winner === 'X') {
       SFX.correct();
       onComplete();
+    } else if (winner === 'draw') {
+      SFX.refresh();
     } else {
       SFX.wrong();
       shakeWrong(verifyBtn);

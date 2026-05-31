@@ -1,4 +1,4 @@
-import { SFX, el } from '../shared.js';
+import { SFX, el, shakeWrong } from '../shared.js';
 
 function startTimer(timerElement) {
   let time = 20;
@@ -158,10 +158,7 @@ export function renderWordCaptcha(parent, onComplete) {
       SFX.wrong();
       input.classList.add('wrong');
       submitBtn.classList.add('wrong');
-      setTimeout(() => {
-        input.classList.remove('wrong');
-        submitBtn.classList.remove('wrong');
-      }, 800);
+      shakeWrong(submitBtn);
       input.value = '';
     }
   }
