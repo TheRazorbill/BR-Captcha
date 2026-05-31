@@ -283,15 +283,6 @@ html, body {
 .modal-btn:hover { background: #1c74e0; border-color: #000; color: #fff; }
 .modal-btn.cancel:hover { background: #eee; border-color: #000; color: #000; }
 
-#absurd-countdown {
-  color: #e53e3e;
-  font-size: 11px;
-  font-weight: 700;
-  margin-top: 5px;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-}
-
 /* ─── Responsive ─── */
 @media (max-width: 700px) {
   #content { padding-top: 120px; }

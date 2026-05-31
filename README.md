@@ -8,14 +8,14 @@ Inteligencias artificiais avancadas conseguem resolver quebra cabecas complexos 
 
 ## Equipe e Restricao Absurda
 
-Este projeto foi desenvolvido pela equipe 𝑩𝑰𝑹𝑫𝑺 𝑭𝑶𝑹 𝑺𝑶𝑴𝑬 𝑹𝑬𝑨𝑺𝑶𝑵 durante a Codecon Universe de 2026. Atendendo de forma criativa a restricao sorteada pelo bot do evento, incluimos nas telas um contador regressivo em tempo real para algo que nunca vai acontecer: o tempo restante para o Vasco ser campeao mundial.
+Este projeto foi desenvolvido pela equipe **BIRDS FOR SOME REASON** durante a Codecon Universe de 2026. Atendendo de forma criativa a restrição sorteada pelo bot do evento, aproveitamos o próprio cronômetro embutido de cada fase do CAPTCHA que começa em 20 segundos e, ao invés de expirar ou travar o fluxo, continua contando infinitamente em valores negativos, criando um contador regressivo infinito que nunca vai terminar.
 
 ## Como Rodar o Projeto
 
 Voce pode iniciar o projeto em menos de 1 minuto seguindo qualquer um dos passos abaixo.
 
-### Metodo One-Click
-1. Só clicar no link: https://therazorbill.github.io/BR-Captcha/
+### Metodo de Um Clique
+1. Só clicar no link: https://therazorbill.github.io/CPF-na-Nota/
 
 ### Metodo Direto: Sem Instalacao
 1. Navegue ate a pasta do projeto.
@@ -70,7 +70,7 @@ Apos vencer todos os 14 desafios, o usuario alcanca a tela final de conclusao.
 ## Link de Demonstracao
 
 O projeto esta publicado e pronto para ser testado no endereço abaixo:
-* URL: https://therazorbill.github.io/BR-Captcha/
+* URL: https://therazorbill.github.io/CPF-na-Nota/
 
 ## Equipe de Desenvolvimento
 

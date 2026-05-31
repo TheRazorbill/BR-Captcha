@@ -15,8 +15,9 @@ import { renderFaceExpression } from './levels/face-expression/index.js';
 import { renderCertificado } from './levels/certificado/index.js';
 
 // ─── State ───────────────────────────────────────────────────────────────────
-const PLAYABLE_LEVELS = [
-  { name: 'Confirme',              render: renderCheckbox },
+const INITIAL_LEVEL = { name: 'Confirme', render: renderCheckbox };
+
+const SHUFFLABLE_LEVELS = [
   { name: 'Campainha',             render: renderCampainha },
   { name: 'Pote de Sorvete',       render: renderSorvete },
   { name: 'Conserte o Chinelo',    render: renderConserteChinelo },
@@ -42,8 +43,8 @@ function initializeLevels() {
     levelOrder = JSON.parse(localStorage.getItem('not-a-robot-order'));
   } catch (e) {}
 
-  if (!levelOrder || levelOrder.length !== PLAYABLE_LEVELS.length) {
-    levelOrder = Array.from({ length: PLAYABLE_LEVELS.length }, (_, i) => i);
+  if (!levelOrder || levelOrder.length !== SHUFFLABLE_LEVELS.length) {
+    levelOrder = Array.from({ length: SHUFFLABLE_LEVELS.length }, (_, i) => i);
     for (let i = levelOrder.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [levelOrder[i], levelOrder[j]] = [levelOrder[j], levelOrder[i]];
@@ -51,8 +52,11 @@ function initializeLevels() {
     localStorage.setItem('not-a-robot-order', JSON.stringify(levelOrder));
   }
 
-  LEVELS = levelOrder.map(index => PLAYABLE_LEVELS[index]);
-  LEVELS.push(CERTIFICATE_LEVEL);
+  LEVELS = [
+    INITIAL_LEVEL,
+    ...levelOrder.map(index => SHUFFLABLE_LEVELS[index]),
+    CERTIFICATE_LEVEL
+  ];
 }
 
 initializeLevels();
@@ -97,38 +101,5 @@ $modalBtnReset.addEventListener('click', () => {
   goToLevel(0);
 });
 
-// ─── Absurd Countdown ────────────────────────────────────────────────────────
-function startAbsurdCountdown() {
-  const $countdown = document.getElementById('absurd-countdown');
-  if (!$countdown) return;
-
-  const targetDate = new Date(3000, 0, 1).getTime();
-
-  setInterval(() => {
-    const now = new Date().getTime();
-    const difference = targetDate - now;
-
-    if (difference <= 0) {
-      $countdown.textContent = 'Tempo esgotado';
-      return;
-    }
-
-    const secondsInMs = 1000;
-    const minutesInMs = secondsInMs * 60;
-    const hoursInMs = minutesInMs * 60;
-    const daysInMs = hoursInMs * 24;
-    const yearsInMs = daysInMs * 365.25;
-
-    const years = Math.floor(difference / yearsInMs);
-    const days = Math.floor((difference % yearsInMs) / daysInMs);
-    const hours = Math.floor((difference % daysInMs) / hoursInMs);
-    const minutes = Math.floor((difference % hoursInMs) / minutesInMs);
-    const seconds = Math.floor((difference % minutesInMs) / secondsInMs);
-
-    $countdown.textContent = `Tempo restante para o Vasco ser campeao mundial: ${years}a ${days}d ${hours}h ${minutes}m ${seconds}s`;
-  }, 1000);
-}
-
 // ─── Start ────────────────────────────────────────────────────────────────────
-startAbsurdCountdown();
 goToLevel(currentLevel);
