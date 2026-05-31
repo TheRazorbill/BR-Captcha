@@ -1,6 +1,6 @@
-# BR Captcha: CPF na Nota
+# CPF na Nota
 
-BR Captcha e o sistema de verificacao de humanidade definitivo para proteger a internet contra robos e inteligencias artificiais utilizando habitos e gambiarras tipicamente brasileiras. Criado durante a Codecon Universe de 2026, este projeto une utilidade tecnica de ponta a uma logica surreal.
+CPF na Nota é o sistema de verificacao de humanidade definitivo para proteger a internet contra robos e inteligencias artificiais utilizando habitos e gambiarras tipicamente brasileiras. Criado durante a Codecon Universe de 2026, este projeto une utilidade tecnica de ponta a uma logica surreal.
 
 ## O Conceito
 
@@ -47,6 +47,8 @@ O usuario passara por uma sequencia de 14 etapas geradas de forma totalmente ale
 * Sorria: Ative sua webcam e sorria para a camera. O sistema utiliza a biblioteca face api para validar se voce esta realmente feliz.
 
 ## O Certificado de Humanidade
+
+<img width="2000" height="1414" alt="certificado" src="https://github.com/user-attachments/assets/5d3ee0d8-6cb5-4fd5-ab07-16b107d57144" />
 
 Apos vencer todos os 14 desafios, o usuario alcanca a tela final de conclusao. 
 
