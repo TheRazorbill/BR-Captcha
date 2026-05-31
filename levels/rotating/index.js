@@ -1,4 +1,4 @@
-import { SFX, el, makeGridCaptcha, shakeWrong } from '../shared.js';
+import { SFX, el, makeGridCaptcha, shakeWrong } from '../../shared.js';
 
 export function renderRotating(parent, onComplete) {
   const rotations = Array.from({ length: 9 }, () => 90 * Math.floor(4 * Math.random()));

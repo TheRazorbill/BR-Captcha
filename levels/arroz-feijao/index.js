@@ -1,4 +1,4 @@
-import { SFX, el, makeGridCaptcha, shakeWrong } from '../shared.js';
+import { SFX, el, makeGridCaptcha, shakeWrong } from '../../shared.js';
 
 export function renderArrozFeijao(parent, onComplete) {
   const { content, refreshImg, verifyBtn } = makeGridCaptcha('Feijão é?', 'Selecione o lado correto e depois clique em', parent);
@@ -26,6 +26,7 @@ export function renderArrozFeijao(parent, onComplete) {
 
   let selected = null;
   let done = false;
+
   function setSelected(nextSelected) {
     selected = nextSelected;
     leftBtn.classList.toggle('selected', selected === 'left');

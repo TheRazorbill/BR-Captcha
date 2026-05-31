@@ -1,0 +1,18 @@
+.rotating-container {
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  margin-top: 5px;
+}
+
+.rotating-item {
+  aspect-ratio: 1;
+  background-image: url(../../assets/rotating/rotating.webp);
+  background-repeat: no-repeat;
+  background-size: 300% 300%;
+  cursor: pointer;
+  transition: transform .2s ease-out;
+  user-select: none;
+  width: 100%;
+}

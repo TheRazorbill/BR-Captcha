@@ -24,17 +24,13 @@ function loadFaceApiScript() {
 
 async function loadModels(faceapi) {
   if (loadModels.done) return;
-
   await faceapi.nets.tinyFaceDetector.loadFromUri(FACE_MODELS_URL);
-
   loadModels.done = true;
 }
 
 function playDingDong() {
   const audio = new Audio('assets/campainha/ding-dong.mp3');
-  audio.play().catch(() => {
-    console.log('O navegador bloqueou o som.');
-  });
+  audio.play().catch(() => {});
 }
 
 function wait(ms) {
@@ -143,8 +139,6 @@ export function renderCampainha(parent, onComplete) {
 
       campainhaBtn.disabled = false;
     } catch (error) {
-      console.error(error);
-
       status.textContent = 'Não consegui iniciar a câmera ou carregar os modelos.';
       overlay.textContent = 'Erro';
 
@@ -192,7 +186,6 @@ export function renderCampainha(parent, onComplete) {
 
   function stopCamera() {
     if (!stream) return;
-
     stream.getTracks().forEach((track) => track.stop());
     stream = null;
   }
@@ -241,7 +234,6 @@ export function renderCampainha(parent, onComplete) {
     campainhaBtn.classList.add('campainha-pressed');
 
     await wait(600);
-
     await countdown();
 
     status.textContent = 'Foto tirada. Verificando se você se escondeu...';
@@ -278,8 +270,6 @@ export function renderCampainha(parent, onComplete) {
         running = false;
       }
     } catch (error) {
-      console.error(error);
-
       SFX.wrong();
       shakeWrong(campainhaBtn);
 
@@ -321,7 +311,6 @@ export function renderCampainha(parent, onComplete) {
 
   return () => {
     stopCamera();
-
     startBtn.removeEventListener('click', handleStartClick);
     campainhaBtn.removeEventListener('click', handleCampainhaClick);
     verifyBtn.removeEventListener('click', verifyCampainha);

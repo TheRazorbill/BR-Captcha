@@ -1,0 +1,10 @@
+.meia-cell {
+  aspect-ratio: 2/1;
+  background-color: #f3f3f3;
+  border: 2px solid #d3d3d3;
+  cursor: pointer;
+  transition: border-color .12s;
+  width: 100%;
+}
+
+.meia-cell.selected { border-color: #488ddd; outline: 3px solid #488ddd; outline-offset: -3px; }

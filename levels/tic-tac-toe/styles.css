@@ -1,0 +1,35 @@
+.ttt-container { height: 100%; position: relative; width: 100%; }
+
+.ttt-cell {
+  align-items: center;
+  aspect-ratio: 1;
+  background: #f3f3f3;
+  border-right: 3px solid #aaa;
+  border-bottom: 3px solid #aaa;
+  cursor: pointer;
+  display: flex;
+  font-size: 48px;
+  justify-content: center;
+  transition: scale .09s ease-out;
+  width: 100%;
+}
+
+.ttt-cell:nth-child(3n)  { border-right: none; }
+.ttt-cell:nth-child(n+7) { border-bottom: none; }
+
+.ttt-cell svg { height: 60%; width: 60%; overflow: visible; }
+
+.ttt-cell.disabled { pointer-events: none; }
+
+.winning-line-overlay {
+  height: 100%;
+  left: 0;
+  opacity: .25;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.winning-line-svg { height: 100%; width: 100%; }

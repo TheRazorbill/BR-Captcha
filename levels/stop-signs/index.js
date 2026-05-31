@@ -1,4 +1,4 @@
-import { SFX, makeGrid, makeGridCaptcha, shakeWrong } from '../shared.js';
+import { SFX, makeGrid, makeGridCaptcha, shakeWrong } from '../../shared.js';
 
 export function renderStopSigns(parent, onComplete) {
   const CORRECT = [

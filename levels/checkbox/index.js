@@ -1,4 +1,4 @@
-import { SFX, el } from '../shared.js';
+import { SFX, el } from '../../shared.js';
 
 export function renderCheckbox(parent, onComplete) {
   const wrap = el('div', '');

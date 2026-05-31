@@ -1,4 +1,4 @@
-import { SFX, el, makeGridCaptcha, shakeWrong } from '../shared.js';
+import { SFX, el, makeGridCaptcha, shakeWrong } from '../../shared.js';
 
 const FACE_API_SCRIPT = 'https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js';
 const FACE_MODELS_URL = 'https://justadudewhohacks.github.io/face-api.js/models';

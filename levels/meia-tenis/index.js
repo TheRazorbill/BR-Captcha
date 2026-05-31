@@ -1,7 +1,6 @@
-import { SFX, el, makeGridCaptcha, shakeWrong } from '../shared.js';
+import { SFX, el, makeGridCaptcha, shakeWrong } from '../../shared.js';
 
 export function renderMeiaTenis(parent, onComplete) {
-  // Use a grid split into 2 rows (top half, bottom half)
   const { content, refreshImg, verifyBtn } = makeGridCaptcha('qual a ordem correta', 'Selecione a metade correta e depois clique em', parent);
   refreshImg.style.display = 'none';
 
@@ -21,7 +20,7 @@ export function renderMeiaTenis(parent, onComplete) {
 
   for (let i = 0; i < rows; i++) {
     const cell = el('div', 'meia-cell');
-    const x = 50; // center horizontally
+    const x = 50;
     const y = 100 * i / (rows - 1);
     cell.style.backgroundImage = `url(assets/meias/meia.webp)`;
     cell.style.backgroundSize = `${100 * cols}% ${100 * rows}%`;
@@ -41,7 +40,6 @@ export function renderMeiaTenis(parent, onComplete) {
 
   verifyBtn.addEventListener('click', () => {
     const sel = [...selected][0];
-    // per spec, the top half (index 0) is correct
     if (sel === 0) { SFX.correct(); onComplete(); }
     else { SFX.wrong(); shakeWrong(verifyBtn); }
   });

@@ -1,44 +1,44 @@
-import { renderCheckbox } from './levels/checkbox.js';
-import { renderStopSigns } from './levels/stop-signs.js';
-import { renderVegetables } from './levels/vegetables.js';
-import { renderRotating } from './levels/rotating.js';
-import { renderTicTacToe } from './levels/tic-tac-toe.js';
-import { renderWordCaptcha } from './levels/word-captcha.js';
-import { renderArrozFeijao } from './levels/arroz-feijao.js';
-import { renderCompleteLyrics } from './levels/complete-song/index.js';
-import { renderMeiaTenis } from './levels/meia-tenis.js';
+import { renderCheckbox } from './levels/checkbox/index.js';
+import { renderCampainha } from './levels/campainha/index.js';
 import { renderSorvete } from './levels/sorvete/index.js';
-import { renderCampainha } from './levels/campainha/campainha.js';
-import { renderCpfNaNota } from './levels/cpf-na-nota/index.js';
-import { renderFaceExpression } from './levels/face-expression.js';
 import { renderConserteChinelo } from './levels/conserte-chinelo/index.js';
+import { renderStopSigns } from './levels/stop-signs/index.js';
+import { renderVegetables } from './levels/vegetables/index.js';
+import { renderRotating } from './levels/rotating/index.js';
+import { renderTicTacToe } from './levels/tic-tac-toe/index.js';
+import { renderWordCaptcha } from './levels/word-captcha/index.js';
+import { renderArrozFeijao } from './levels/arroz-feijao/index.js';
+import { renderCompleteLyrics } from './levels/complete-song/index.js';
+import { renderMeiaTenis } from './levels/meia-tenis/index.js';
+import { renderCpfNaNota } from './levels/cpf-na-nota/index.js';
+import { renderFaceExpression } from './levels/face-expression/index.js';
 
 // ─── State ───────────────────────────────────────────────────────────────────
 const LEVELS = [
-  { name: 'Confirme',    render: renderCheckbox },
-  { name: 'Campainha', render: renderCampainha },
-  { name: 'Pote de Sorvete', render: renderSorvete },
-  { name: 'Conserte o Chinelo', render: renderConserteChinelo },
-  { name: 'PARE',   render: renderStopSigns },
-  { name: 'Vegetais',   render: renderVegetables },
-  { name: 'Interseção',    render: renderRotating },
-  { name: 'Jogo da Velha', render: renderTicTacToe },
-  { name: 'Captcha de palavra',render: renderWordCaptcha },
-  { name: 'Arroz e Feijão', render: renderArrozFeijao },
-  { name: 'Complete a Música', render: renderCompleteLyrics },
-  { name: 'Campainha', render: renderCampainha },
-  { name: 'Qual a ordem?', render: renderMeiaTenis },
-  { name: 'CPF na Notaaaaa', render: renderCpfNaNota },  
-  { name: 'Sorria :)', render: renderFaceExpression },
+  { name: 'Confirme',              render: renderCheckbox },
+  { name: 'Campainha',             render: renderCampainha },
+  { name: 'Pote de Sorvete',       render: renderSorvete },
+  { name: 'Conserte o Chinelo',    render: renderConserteChinelo },
+  { name: 'PARE',                  render: renderStopSigns },
+  { name: 'Vegetais',              render: renderVegetables },
+  { name: 'Interseção',            render: renderRotating },
+  { name: 'Jogo da Velha',         render: renderTicTacToe },
+  { name: 'Captcha de palavra',    render: renderWordCaptcha },
+  { name: 'Arroz e Feijão',        render: renderArrozFeijao },
+  { name: 'Complete a Música',     render: renderCompleteLyrics },
+  { name: 'Campainha',             render: renderCampainha },
+  { name: 'Qual a ordem?',         render: renderMeiaTenis },
+  { name: 'CPF na Notaaaaa',       render: renderCpfNaNota },
+  { name: 'Sorria :)',             render: renderFaceExpression },
 ];
 
 let currentLevel = parseInt(localStorage.getItem('not-a-robot-level') || '0');
 let cleanup = null;
 
 // ─── DOM refs ─────────────────────────────────────────────────────────────────
-const $content    = document.getElementById('content');
-const $levelLabel = document.getElementById('header-level');
-const $resetBtn   = document.getElementById('footer-reset');
+const $content      = document.getElementById('content');
+const $levelLabel   = document.getElementById('header-level');
+const $resetBtn     = document.getElementById('footer-reset');
 const $modalOverlay = document.getElementById('modal-overlay');
 const $modalBtnCancel = document.getElementById('modal-cancel');
 const $modalBtnReset  = document.getElementById('modal-reset');
@@ -57,8 +57,6 @@ function goToLevel(n) {
     }
   });
 }
-
-function nextLevel() { goToLevel(currentLevel + 1); }
 
 // ─── Reset modal ─────────────────────────────────────────────────────────────
 $resetBtn.addEventListener('click', () => $modalOverlay.classList.add('visible'));

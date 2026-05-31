@@ -1,4 +1,4 @@
-import { SFX, el, shakeWrong } from '../shared.js';
+import { SFX, el, shakeWrong } from '../../shared.js';
 
 function startTimer(timerElement) {
   let time = 20;

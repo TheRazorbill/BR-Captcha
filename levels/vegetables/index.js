@@ -1,4 +1,4 @@
-import { SFX, el, makeGridCaptcha, shakeWrong } from '../shared.js';
+import { SFX, el, makeGridCaptcha, shakeWrong } from '../../shared.js';
 
 export function renderVegetables(parent, onComplete) {
   const VEGS = ['tomato', 'carrot', 'onion', 'banana', 'grape', 'corn', 'avocado', 'potato', 'eggplant'];
