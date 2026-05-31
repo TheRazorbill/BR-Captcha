@@ -10,6 +10,7 @@ export function renderStopSigns(parent, onComplete) {
   let idx = 0;
 
   const { content, refreshImg, verifyBtn } = makeGridCaptcha('Sinal de PARE', 'Selecione todos os quadrados com o', parent);
+  refreshImg.style.display = 'none';
   let grid = makeGrid(4, `assets/stop-signs/pare.jpg`, content);
 
   refreshImg.addEventListener('click', () => {

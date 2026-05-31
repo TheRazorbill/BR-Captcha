@@ -4,6 +4,7 @@ export function renderRotating(parent, onComplete) {
   const rotations = Array.from({ length: 9 }, () => 90 * Math.floor(4 * Math.random()));
 
   const { content, refreshImg, verifyBtn } = makeGridCaptcha('Interseção', 'Remontar a', parent);
+  refreshImg.style.display = 'none';
 
   const rotateCont = el('div', 'rotating-container');
 
