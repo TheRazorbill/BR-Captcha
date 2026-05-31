@@ -1,0 +1,94 @@
+.campainha-captcha {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  text-align: center;
+}
+
+.campainha-preview {
+  position: relative;
+  width: 320px;
+  max-width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 3px solid #222;
+  background: #111;
+}
+
+.campainha-video {
+  width: 100%;
+  display: block;
+  transform: scaleX(-1);
+}
+
+.campainha-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.campainha-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.campainha-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
+.campainha-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.campainha-img {
+  height: 600px;
+  display: block;
+  transition: transform 0.15s ease;
+}
+
+.campainha-btn:hover .campainha-img {
+  transform: scale(1.05);
+}
+
+.campainha-pressed .campainha-img {
+  transform: scale(0.9);
+}
+
+.campainha-timer {
+  height: 64px;
+  font-size: 56px;
+  line-height: 64px;
+  font-weight: 900;
+  color: #d60000;
+}
+
+.campainha-status {
+  min-height: 24px;
+  font-weight: bold;
+}
+
+.campainha-start {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 2px solid #222;
+  background: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.campainha-start:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
