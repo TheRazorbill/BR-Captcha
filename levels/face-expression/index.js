@@ -125,6 +125,26 @@ export function renderFaceExpression(parent, onComplete) {
     if (completed) return;
     if (smiling) {
       completed = true;
+      
+      // Capture the user's smiling photo from the video stream
+      try {
+        const captureCanvas = document.createElement('canvas');
+        captureCanvas.width = video.videoWidth || 640;
+        captureCanvas.height = video.videoHeight || 480;
+        const ctx = captureCanvas.getContext('2d');
+        
+        // Mirror the image horizontally if the video preview is mirrored
+        ctx.translate(captureCanvas.width, 0);
+        ctx.scale(-1, 1);
+        
+        ctx.drawImage(video, 0, 0, captureCanvas.width, captureCanvas.height);
+        
+        const userPhotoDataUrl = captureCanvas.toDataURL('image/jpeg', 0.85);
+        localStorage.setItem('br-captcha-user-photo', userPhotoDataUrl);
+      } catch (error) {
+        console.error('Falha ao capturar a foto do usuário sorrindo:', error);
+      }
+
       SFX.correct();
       onComplete();
     } else {

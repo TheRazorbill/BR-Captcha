@@ -12,6 +12,7 @@ import { renderCompleteLyrics } from './levels/complete-song/index.js';
 import { renderMeiaTenis } from './levels/meia-tenis/index.js';
 import { renderCpfNaNota } from './levels/cpf-na-nota/index.js';
 import { renderFaceExpression } from './levels/face-expression/index.js';
+import { renderCertificado } from './levels/certificado/index.js';
 
 // ─── State ───────────────────────────────────────────────────────────────────
 const LEVELS = [
@@ -29,6 +30,7 @@ const LEVELS = [
   { name: 'Qual a ordem?',         render: renderMeiaTenis },
   { name: 'CPF na Notaaaaa',       render: renderCpfNaNota },
   { name: 'Sorria :)',             render: renderFaceExpression },
+  { name: 'Certificado de Humanidade', render: renderCertificado },
 ];
 
 let currentLevel = parseInt(localStorage.getItem('not-a-robot-level') || '0');
@@ -47,7 +49,11 @@ function goToLevel(n) {
   if (cleanup) { cleanup(); cleanup = null; }
   currentLevel = Math.max(0, Math.min(n, LEVELS.length - 1));
   localStorage.setItem('not-a-robot-level', currentLevel);
-  $levelLabel.textContent = `Nível ${currentLevel + 1}: ${LEVELS[currentLevel].name}`;
+  if (currentLevel === LEVELS.length - 1) {
+    $levelLabel.textContent = LEVELS[currentLevel].name;
+  } else {
+    $levelLabel.textContent = `Nível ${currentLevel + 1}: ${LEVELS[currentLevel].name}`;
+  }
   $content.innerHTML = '';
   cleanup = LEVELS[currentLevel].render($content, () => {
     const nextLevelIndex = currentLevel + 1;

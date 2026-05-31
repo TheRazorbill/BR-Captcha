@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Great+Vibes&display=swap');
+
+@font-face {
+  font-family: 'Brittany';
+  src: url('../../assets/BrittanySignature.ttf') format('truetype');
+}
+
+.cert-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 16px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  border: 1px solid #e2e8f0;
+}
+
+.cert-instructions {
+  font-size: 15px;
+  color: #4a5568;
+  text-align: center;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.cert-instructions strong {
+  color: #2b6cb0;
+}
+
+.cert-input-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.cert-name-input {
+  width: 100%;
+  max-width: 380px;
+  padding: 12px 16px;
+  font-size: 16px;
+  border: 2px solid #cbd5e0;
+  border-radius: 10px;
+  outline: none;
+  text-align: center;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  color: #2d3748;
+}
+
+.cert-name-input:focus {
+  border-color: #3182ce;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.25);
+}
+
+.cert-draggable-wrapper {
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cert-draggable-name {
+  cursor: grab;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #4299e1, #2b6cb0);
+  color: #ffffff;
+  padding: 8px 18px;
+  border-radius: 30px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(66, 153, 225, 0.3);
+  font-family: 'Caveat', cursive;
+  font-size: 20px;
+  user-select: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  white-space: nowrap;
+}
+
+.cert-draggable-name:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(66, 153, 225, 0.4);
+}
+
+.cert-draggable-name:active {
+  cursor: grabbing;
+}
+
+.cert-draggable-name.dragging {
+  cursor: grabbing;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+  transform: scale(1.05);
+  opacity: 0.95;
+  transition: none !important;
+}
+
+.cert-draggable-name .cert-drag-icon {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.cert-board {
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border: 1px solid #cbd5e0;
+  background: #f7fafc;
+  aspect-ratio: 1.4144;
+}
+
+.cert-bg-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  pointer-events: none;
+  user-select: none;
+}
+
+.cert-drop-zone {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.cert-drop-zone-value {
+  color: #1a202c;
+  font-family: 'Brittany', 'Great Vibes', cursive;
+  text-align: center;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+}
+
+.cert-drop-zone[data-zone="box"] .cert-drop-zone-value {
+  font-size: 4.5vw;
+}
+.cert-drop-zone[data-zone="line"] .cert-drop-zone-value {
+  font-size: 2.2vw;
+}
+.cert-drop-zone[data-zone="signature"] .cert-drop-zone-value {
+  font-size: 3.2vw;
+  color: #1a365d;
+}
+
+@media (min-width: 750px) {
+  .cert-drop-zone[data-zone="box"] .cert-drop-zone-value {
+    font-size: 34px;
+  }
+  .cert-drop-zone[data-zone="line"] .cert-drop-zone-value {
+    font-size: 16px;
+  }
+  .cert-drop-zone[data-zone="signature"] .cert-drop-zone-value {
+    font-size: 24px;
+  }
+}
+
+.cert-success-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  animation: certFadeIn 0.6s ease-out forwards;
+}
+
+@keyframes certFadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.cert-success-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: #2b6cb0;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.cert-success-text {
+  font-size: 15px;
+  color: #4a5568;
+  margin-bottom: 24px;
+  text-align: center;
+  max-width: 500px;
+}
+
+.cert-download-btn {
+  background: linear-gradient(135deg, #48bb78, #38a169);
+  color: #ffffff;
+  padding: 14px 28px;
+  font-size: 17px;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(72, 187, 120, 0.4);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cert-download-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(72, 187, 120, 0.5);
+  background: linear-gradient(135deg, #38a169, #2f855a);
+}
+
+.cert-download-btn:active {
+  transform: translateY(0);
+}
+
+.captcha-container.cert-captcha-victory {
+  max-width: 950px !important;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+  padding: 24px;
+  transition: max-width 0.4s ease;
+}
+
+.cert-captcha-victory .cert-success-view .cert-board {
+  max-width: 900px;
+}
+
+.cert-captcha-victory .cert-drop-zone[data-zone="box"] .cert-drop-zone-value {
+  font-size: 4.8vw;
+}
+.cert-captcha-victory .cert-drop-zone[data-zone="line"] .cert-drop-zone-value {
+  font-size: 2.4vw;
+}
+.cert-captcha-victory .cert-drop-zone[data-zone="signature"] .cert-drop-zone-value {
+  font-size: 3.4vw;
+}
+
+@media (min-width: 950px) {
+  .cert-captcha-victory .cert-drop-zone[data-zone="box"] .cert-drop-zone-value {
+    font-size: 45px;
+  }
+  .cert-captcha-victory .cert-drop-zone[data-zone="line"] .cert-drop-zone-value {
+    font-size: 22px;
+  }
+  .cert-captcha-victory .cert-drop-zone[data-zone="signature"] .cert-drop-zone-value {
+    font-size: 32px;
+  }
+}
+
+.cert-user-photo {
+  position: absolute;
+  top: 10.04%;
+  left: 7.0%;
+  width: 14.3%;
+  height: 20.22%;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  border: 2px solid #fff;
+  z-index: 5;
+}
